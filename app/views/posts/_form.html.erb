@@ -1,0 +1,13 @@
+<%= form_with model: @post do |form| %>
+  <div>
+    <%= form.label :title, "タイトル" %>
+    <%= form.text_field :title %>
+  </div>
+  <div>
+    <%= form.label :content, "内容" %>  
+    <%= form.text_area :content %>
+  </div>
+  <div>
+    <%= form.submit value %>
+  </div>
+<% end %>
