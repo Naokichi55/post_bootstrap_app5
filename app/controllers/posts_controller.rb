@@ -15,7 +15,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params) 
+   @post = Post.new(post_params) 
     if @post.save
       redirect_to @post, notice: "投稿しました"
     else
@@ -37,11 +37,9 @@ class PostsController < ApplicationController
     end
   end
 
-  def destroy
-    
+  def destroy  
     @post.destroy!
     redirect_to @post, alert: "削除しました"
-
   end
 
   private
