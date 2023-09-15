@@ -1,11 +1,10 @@
-<%= render "layouts/error_messages", object: @post %>
 <%= form_with model: @post do |form| %>
   <div>
-    <%= form.label :title %>
+    <%= form.label :title, "タイトル" %>
     <%= form.text_field :title %>
   </div>
   <div>
-    <%= form.label :content %>  
+    <%= form.label :content, "内容" %>  
     <%= form.text_area :content %>
   </div>
   <div>
