@@ -15,13 +15,9 @@ class PostsController < ApplicationController
   end
 
   def create
-   @post = Post.new(post_params) 
-    if @post.save
-      redirect_to @post, notice: "投稿しました"
-    else
-      flash.now[:alert] = "投稿に失敗しました"
-      render :new, status: :unprocessable_entity
-    end
+    post = Post.create!(post_params)
+    redirect_to post, notice: "投稿しました"
+
   end
 
   def edit
@@ -29,17 +25,13 @@ class PostsController < ApplicationController
   end
 
   def update
-    if @post.update(post_params)
-      redirect_to @post, notice: "更新しました"
-    else
-      flash.now[:alert] = "更新に失敗しました"
-      render :edit, status: :unprocessable_entity
-    end
+    @post.update!(post_params)
+    redirect_to @post, notice:"更新しました"
   end
 
   def destroy  
     @post.destroy!
-    redirect_to @post, alert: "削除しました"
+    redirect_to root_path, alert: "削除しました"
   end
 
   private
