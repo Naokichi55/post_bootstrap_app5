@@ -1,2 +1,10 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
+
+div.field_with_erros {
+  display: contents;
+  input,
+  textarea {
+    border: 2px solid red;
+  }
+}
